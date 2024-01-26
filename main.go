@@ -13,6 +13,7 @@ import (
 func main() {
 	logger := log.New(os.Stdout, "product-api", log.LstdFlags)
 
+
 	// create the handlers
 	productHandler := handlers.NewProducts(logger)
 
@@ -22,7 +23,7 @@ func main() {
 
 	// create a new server
 	server := &http.Server{
-		Addr: ":9090",
+		Addr: "127.0.0.1:9090",
 		Handler: serveMux,
 		IdleTimeout: 120 * time.Second,
 		ReadTimeout: 1 * time.Second,
